@@ -21,14 +21,14 @@
                             >{{$new['content_'.session('lang')]}}</span
                             >
                             <a href="{{route('singleBlog', $new->id)}}" class="nd_btn"
-                            ><span>Read More</span></a
+                            ><span>{{__('words.read more')}}</span></a
                             >
                         </div>
                     </div>
                 </div>
                 @endforeach
             </div>
-        {{$news->links('frontend.layouts.pagination')}}
+            {{$news->links('frontend.layouts.pagination')}}
         </div>
     </div>
 @endsection

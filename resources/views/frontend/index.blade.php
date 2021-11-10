@@ -1,3 +1,252 @@
+{{--@extends('frontend.layouts.app')--}}
+{{--@section('content')--}}
+{{--<div class="wrapper header_slider loading">--}}
+{{--    <main>--}}
+{{--        <div class="slideshow">--}}
+{{--            <div class="slides">--}}
+{{--                @foreach($sliders as $key => $slider)--}}
+{{--                    <div class="slide {{$key == 0 ? "slide--current" : ''}}">--}}
+{{--                        <div--}}
+{{--                            class="slide__img"--}}
+{{--                            style="background-image: url({{asset($slider->image)}});">--}}
+{{--                        </div>--}}
+{{--                        <h2 class="slide__title">{{$slider['title_'.session('lang')]}}</h2>--}}
+{{--                        <p class="slide__desc">{{$slider['body_'.session('lang')]}}</p>--}}
+{{--                        <a class="slide__link" href="{{$slider->link}}">{{__('words.read more')}}</a>--}}
+{{--                    </div>--}}
+{{--                @endforeach--}}
+{{--            </div>--}}
+{{--            @if($sliders->count() > 1)--}}
+{{--            <nav class="slidenav">--}}
+{{--                <button class="slidenav__item slidenav__item--prev">--}}
+{{--                    <i class="fas fa-angle-left"></i>--}}
+{{--                </button>--}}
+{{--                <button class="slidenav__item slidenav__item--next">--}}
+{{--                    <i class="fas fa-angle-right"></i>--}}
+{{--                </button>--}}
+{{--            </nav>--}}
+{{--            @endif--}}
+{{--        </div>--}}
+{{--    </main>--}}
+{{--</div>--}}
+{{--<div class="news paddingX py-5">--}}
+{{--    <div class="container-fluid">--}}
+{{--        <span class="title wow">Yangiliklar</span>--}}
+{{--        <div class="news_block swiper-container">--}}
+{{--            <div class="swiper-wrapper">--}}
+{{--                <div class="news_item swiper-slide">--}}
+{{--                    <div class="date_news">--}}
+{{--                        <i class="far fa-calendar-alt"></i>--}}
+{{--                        <span class="date">21.06.1993</span>--}}
+{{--                    </div>--}}
+{{--                    <div class="news_img">--}}
+{{--                        <img src="https://source.unsplash.com/random/3" />--}}
+{{--                    </div>--}}
+{{--                    <span class="news_title"--}}
+{{--                    >Lorem ipsum dolor sit amet consectetur, adipisicing elit.</span--}}
+{{--                    >--}}
+{{--                    <span class="news_description"--}}
+{{--                    >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus--}}
+{{--                dignissimos id in maiores hic repellat accusantium architecto--}}
+{{--                modi voluptatibus illo?</span--}}
+{{--                    >--}}
+{{--                    <a href="newsContent.html" class="nd_btn"--}}
+{{--                    ><span>Read More</span></a--}}
+{{--                    >--}}
+{{--                </div>--}}
+{{--                <div class="news_item swiper-slide">--}}
+{{--                    <div class="date_news">--}}
+{{--                        <i class="far fa-calendar-alt"></i>--}}
+{{--                        <span class="date">21.06.1993</span>--}}
+{{--                    </div>--}}
+{{--                    <div class="news_img">--}}
+{{--                        <img src="https://source.unsplash.com/random/4" />--}}
+{{--                    </div>--}}
+{{--                    <span class="news_title"--}}
+{{--                    >Lorem ipsum dolor sit amet consectetur, adipisicing elit.</span--}}
+{{--                    >--}}
+{{--                    <span class="news_description"--}}
+{{--                    >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus--}}
+{{--                dignissimos id in maiores hic repellat accusantium architecto--}}
+{{--                modi voluptatibus illo?</span--}}
+{{--                    >--}}
+{{--                    <a href="newsContent.html" class="nd_btn"--}}
+{{--                    ><span>Read More</span></a--}}
+{{--                    >--}}
+{{--                </div>--}}
+{{--                <div class="news_item swiper-slide">--}}
+{{--                    <div class="date_news">--}}
+{{--                        <i class="far fa-calendar-alt"></i>--}}
+{{--                        <span class="date">21.06.1993</span>--}}
+{{--                    </div>--}}
+{{--                    <div class="news_img">--}}
+{{--                        <img src="https://source.unsplash.com/random/5" />--}}
+{{--                    </div>--}}
+{{--                    <span class="news_title"--}}
+{{--                    >Lorem ipsum dolor sit amet consectetur, adipisicing elit.</span--}}
+{{--                    >--}}
+{{--                    <span class="news_description"--}}
+{{--                    >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus--}}
+{{--                dignissimos id in maiores hic repellat accusantium architecto--}}
+{{--                modi voluptatibus illo?</span--}}
+{{--                    >--}}
+{{--                    <a href="newsContent.html" class="nd_btn"--}}
+{{--                    ><span>Read More</span></a--}}
+{{--                    >--}}
+{{--                </div>--}}
+{{--                <div class="news_item swiper-slide">--}}
+{{--                    <div class="date_news">--}}
+{{--                        <i class="far fa-calendar-alt"></i>--}}
+{{--                        <span class="date">21.06.1993</span>--}}
+{{--                    </div>--}}
+{{--                    <div class="news_img">--}}
+{{--                        <img src="https://source.unsplash.com/random/6" />--}}
+{{--                    </div>--}}
+{{--                    <span class="news_title"--}}
+{{--                    >Lorem ipsum dolor sit amet consectetur, adipisicing elit.</span--}}
+{{--                    >--}}
+{{--                    <span class="news_description"--}}
+{{--                    >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus--}}
+{{--                dignissimos id in maiores hic repellat accusantium architecto--}}
+{{--                modi voluptatibus illo?</span--}}
+{{--                    >--}}
+{{--                    <a href="newsContent.html" class="nd_btn"--}}
+{{--                    ><span>Read More</span></a--}}
+{{--                    >--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--    <a href="allNews.html" class="st_btn">--}}
+{{--        <span>See All</span>--}}
+{{--    </a>--}}
+{{--</div>--}}
+{{--<div class="photogallery paddingX">--}}
+{{--    <span class="title wow">Image Gallery</span>--}}
+{{--    <div class="wrapper" id="gallery-container">--}}
+{{--        <figure class="photogallery__item">--}}
+{{--            <a--}}
+{{--                data-fancybox="images"--}}
+{{--                href="https://source.unsplash.com/random/7"--}}
+{{--                data-width="1536"--}}
+{{--                data-height="2304"--}}
+{{--            >--}}
+{{--                <img class="img-fluid" src="https://source.unsplash.com/random/7" />--}}
+{{--                <i class="fa fa-camera"></i>--}}
+{{--            </a>--}}
+{{--        </figure>--}}
+{{--        <figure class="photogallery__item">--}}
+{{--            <a--}}
+{{--                data-fancybox="images"--}}
+{{--                href="https://source.unsplash.com/random/8"--}}
+{{--                data-width="1536"--}}
+{{--                data-height="2304"--}}
+{{--            >--}}
+{{--                <img class="img-fluid" src="https://source.unsplash.com/random/8" />--}}
+{{--                <i class="fa fa-camera"></i>--}}
+{{--            </a>--}}
+{{--        </figure>--}}
+{{--        <figure class="photogallery__item">--}}
+{{--            <a--}}
+{{--                data-fancybox="images"--}}
+{{--                href="https://source.unsplash.com/random/9"--}}
+{{--                data-width="1536"--}}
+{{--                data-height="2304"--}}
+{{--            >--}}
+{{--                <img class="img-fluid" src="https://source.unsplash.com/random/9" />--}}
+{{--                <i class="fa fa-camera"></i>--}}
+{{--            </a>--}}
+{{--        </figure>--}}
+{{--        <figure class="photogallery__item">--}}
+{{--            <a--}}
+{{--                data-fancybox="images"--}}
+{{--                href="https://source.unsplash.com/random/10"--}}
+{{--                data-width="1536"--}}
+{{--                data-height="2304"--}}
+{{--            >--}}
+{{--                <img--}}
+{{--                    class="img-fluid"--}}
+{{--                    src="https://source.unsplash.com/random/10"--}}
+{{--                />--}}
+{{--                <i class="fa fa-camera"></i>--}}
+{{--            </a>--}}
+{{--        </figure>--}}
+{{--        <figure class="photogallery__item">--}}
+{{--            <a--}}
+{{--                data-fancybox="images"--}}
+{{--                href="https://source.unsplash.com/random/11"--}}
+{{--                data-width="1536"--}}
+{{--                data-height="2304"--}}
+{{--            >--}}
+{{--                <img--}}
+{{--                    class="img-fluid"--}}
+{{--                    src="https://source.unsplash.com/random/11"--}}
+{{--                />--}}
+{{--                <i class="fa fa-camera"></i>--}}
+{{--            </a>--}}
+{{--        </figure>--}}
+{{--        <figure class="photogallery__item">--}}
+{{--            <a--}}
+{{--                data-fancybox="images"--}}
+{{--                href="https://source.unsplash.com/random/12"--}}
+{{--                data-width="1536"--}}
+{{--                data-height="2304"--}}
+{{--            >--}}
+{{--                <img--}}
+{{--                    class="img-fluid"--}}
+{{--                    src="https://source.unsplash.com/random/12"--}}
+{{--                />--}}
+{{--                <i class="fa fa-camera"></i>--}}
+{{--            </a>--}}
+{{--        </figure>--}}
+{{--    </div>--}}
+{{--    <a href="allPhotos.html" class="st_btn">--}}
+{{--        <span>See All</span>--}}
+{{--    </a>--}}
+{{--</div>--}}
+{{--<div class="counter_section paddingX py-5">--}}
+{{--    <span class="title wow">Ko'rsatgichlar</span>--}}
+{{--    <div class="counter_wrapper row">--}}
+{{--        <div class="col-xl-3 col-lg-6 col-md-12 m-0">--}}
+{{--            <div class="wow item_counter">--}}
+{{--                <i class="fas fa-user-check"></i>--}}
+{{--                <span class="counter_title">Lorem ipsum dolor sit.</span>--}}
+{{--                <span class="counter">112350</span>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--        <div class="col-xl-3 col-lg-6 col-md-12 m-0">--}}
+{{--            <div class="wow item_counter">--}}
+{{--                <i class="fas fa-user-graduate"></i>--}}
+{{--                <span class="counter_title">Lorem ipsum dolor sit.</span>--}}
+{{--                <span class="counter">23659</span>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--        <div class="col-xl-3 col-lg-6 col-md-12 m-0">--}}
+{{--            <div class="wow item_counter">--}}
+{{--                <i class="fas fa-user-friends"></i>--}}
+{{--                <span class="counter_title">Lorem ipsum dolor sit.</span>--}}
+{{--                <span class="counter">589</span>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--        <div class="col-xl-3 col-lg-6 col-md-12 m-0">--}}
+{{--            <div class="wow item_counter">--}}
+{{--                <i class="fas fa-id-card"></i>--}}
+{{--                <span class="counter_title">Lorem ipsum dolor sit.</span>--}}
+{{--                <span class="counter">2662592</span>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</div>--}}
+{{--@endsection--}}
+
+
+
+
+
+
+
+
+
 @extends('frontend.layouts.app')
 @section('content')
     <div class="wrapper header_slider loading">
@@ -74,7 +323,7 @@
             </figure>
             @endforeach
         </div>
-        <a href="#" class="st_btn">
+        <a href="{{route('image')}}" class="st_btn">
             <span>{{__('words.see all')}}</span>
         </a>
     </div>
@@ -94,214 +343,5 @@
     </div>
 @endsection
 @section('script')
-    <script>
-        function debounce(func, wait, immediate) {
-            var timeout;
-            return function () {
-                var context = this,
-                    args = arguments;
-                var later = function () {
-                    timeout = null;
-                    if (!immediate) func.apply(context, args);
-                };
-                var callNow = immediate && !timeout;
-                clearTimeout(timeout);
-                timeout = setTimeout(later, wait);
-                if (callNow) func.apply(context, args);
-            };
-        }
-        class Slideshow {
-            constructor(el) {
-                this.DOM = {};
-                this.DOM.el = el;
-                this.settings = {
-                    animation: {
-                        slides: {
-                            duration: 300,
-                            easing: 'easeOutQuint',
-                        },
-                        shape: {
-                            duration: 300,
-                            easing: { in: 'easeOutQuint', out: 'easeOutQuad' },
-                        },
-                    },
-                    frameFill: '#f1f1f1',
-                };
-                this.init();
-            }
-            init() {
-                this.DOM.slides = Array.from(
-                    this.DOM.el.querySelectorAll('.slides > .slide')
-                );
-                this.slidesTotal = this.DOM.slides.length;
-                this.DOM.nav = this.DOM.el.querySelector('.slidenav');
-                this.DOM.nextCtrl = this.DOM.nav.querySelector(
-                    '.slidenav__item--next'
-                );
-                this.DOM.prevCtrl = this.DOM.nav.querySelector(
-                    '.slidenav__item--prev'
-                );
-                this.current = 0;
-                this.createFrame();
-                this.initEvents();
-            }
-            createFrame() {
-                this.rect = this.DOM.el.getBoundingClientRect();
-                this.frameSize = this.rect.width / 12;
-                this.paths = {
-                    initial: this.calculatePath('initial'),
-                    final: this.calculatePath('final'),
-                };
-                this.DOM.svg = document.createElementNS(
-                    'http://www.w3.org/2000/svg',
-                    'svg'
-                );
-                this.DOM.svg.setAttribute('class', 'shape');
-                this.DOM.svg.setAttribute('width', '100%');
-                this.DOM.svg.setAttribute('height', '100%');
-                this.DOM.svg.setAttribute(
-                    'viewbox',
-                    `0 0 ${this.rect.width} ${this.rect.height}`
-                );
-                this.DOM.svg.innerHTML = `<path fill="${this.settings.frameFill}" d="${this.paths.initial}"/>`;
-                this.DOM.el.insertBefore(this.DOM.svg, this.DOM.nav);
-                this.DOM.shape = this.DOM.svg.querySelector('path');
-            }
-            updateFrame() {
-                this.paths.initial = this.calculatePath('initial');
-                this.paths.final = this.calculatePath('final');
-                this.DOM.svg.setAttribute(
-                    'viewbox',
-                    `0 0 ${this.rect.width} ${this.rect.height}`
-                );
-                this.DOM.shape.setAttribute(
-                    'd',
-                    this.isAnimating ? this.paths.final : this.paths.initial
-                );
-            }
-            calculatePath(path = 'initial') {
-                return path === 'initial'
-                    ? `M 0,0 0,${this.rect.height} ${this.rect.width},${this.rect.height} ${this.rect.width},0 0,0 Z M 0,0 ${this.rect.width},0 ${this.rect.width},${this.rect.height} 0,${this.rect.height} Z`
-                    : `M 0,0 0,${this.rect.height} ${this.rect.width},${
-                        this.rect.height
-                    } ${this.rect.width},0 0,0 Z M ${this.frameSize},${
-                        this.frameSize
-                    } ${this.rect.width - this.frameSize},${this.frameSize} ${
-                        this.rect.width - this.frameSize
-                    },${this.rect.height - this.frameSize} ${this.frameSize},${
-                        this.rect.height - this.frameSize
-                    } Z`;
-            }
-            initEvents() {
-                this.DOM.nextCtrl.addEventListener('click', () =>
-                    this.navigate('next')
-                );
-                this.DOM.prevCtrl.addEventListener('click', () =>
-                    this.navigate('prev')
-                );
-
-                window.addEventListener(
-                    'resize',
-                    debounce(() => {
-                        this.rect = this.DOM.el.getBoundingClientRect();
-                        this.updateFrame();
-                    }, 20)
-                );
-
-                document.addEventListener('keydown', (ev) => {
-                    const keyCode = ev.keyCode || ev.which;
-                    if (keyCode === 37) {
-                        this.navigate('prev');
-                    } else if (keyCode === 39) {
-                        this.navigate('next');
-                    }
-                });
-            }
-            navigate(dir = 'next') {
-                if (this.isAnimating) return false;
-                this.isAnimating = true;
-
-                const animateShapeIn = anime({
-                    targets: this.DOM.shape,
-                    duration: this.settings.animation.shape.duration,
-                    easing: this.settings.animation.shape.easing.in,
-                    d: this.paths.final,
-                });
-
-                const animateSlides = () => {
-                    return new Promise((resolve, reject) => {
-                        const currentSlide = this.DOM.slides[this.current];
-                        anime({
-                            targets: currentSlide,
-                            duration: this.settings.animation.slides.duration,
-                            easing: this.settings.animation.slides.easing,
-                            translateX:
-                                dir === 'next' ? -1 * this.rect.width : this.rect.width,
-                            complete: () => {
-                                currentSlide.classList.remove('slide--current');
-                                resolve();
-                            },
-                        });
-
-                        this.current =
-                            dir === 'next'
-                                ? this.current < this.slidesTotal - 1
-                                ? this.current + 1
-                                : 0
-                                : this.current > 0
-                                ? this.current - 1
-                                : this.slidesTotal - 1;
-
-                        const newSlide = this.DOM.slides[this.current];
-                        newSlide.classList.add('slide--current');
-                        anime({
-                            targets: newSlide,
-                            duration: this.settings.animation.slides.duration,
-                            easing: this.settings.animation.slides.easing,
-                            translateX: [
-                                dir === 'next' ? this.rect.width : -1 * this.rect.width,
-                                0,
-                            ],
-                        });
-
-                        const newSlideImg = newSlide.querySelector('.slide__img');
-                        anime.remove(newSlideImg);
-                        anime({
-                            targets: newSlideImg,
-                            duration: this.settings.animation.slides.duration * 4,
-                            easing: this.settings.animation.slides.easing,
-                            translateX: [dir === 'next' ? 200 : -200, 0],
-                        });
-
-                        anime({
-                            targets: [
-                                newSlide.querySelector('.slide__title'),
-                                newSlide.querySelector('.slide__desc'),
-                                newSlide.querySelector('.slide__link'),
-                            ],
-                            duration: this.settings.animation.slides.duration * 2,
-                            easing: this.settings.animation.slides.easing,
-                            delay: (t, i) => i * 100 + 100,
-                            translateX: [dir === 'next' ? 300 : -300, 0],
-                            opacity: [0, 1],
-                        });
-                    });
-                };
-
-                const animateShapeOut = () => {
-                    anime({
-                        targets: this.DOM.shape,
-                        duration: this.settings.animation.shape.duration,
-                        delay: 150,
-                        easing: this.settings.animation.shape.easing.out,
-                        d: this.paths.initial,
-                        complete: () => (this.isAnimating = false),
-                    });
-                };
-
-                animateShapeIn.finished.then(animateSlides).then(animateShapeOut);
-            }
-        }
-        new Slideshow(document.querySelector('.slideshow'));
-    </script>
+<script src="{{asset('frontend/js/headerSlider.js')}}"></script>
 @endsection

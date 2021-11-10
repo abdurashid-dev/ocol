@@ -19,47 +19,6 @@
                     <!-- form start -->
                     <form method="POST" action="{{ route('admin.sliders.store') }}" enctype="multipart/form-data">
                         @csrf
-{{--                        <div class="card card-primary card-outline card-tabs">--}}
-{{--                            <div class="card-header p-0 pt-1 border-bottom-0">--}}
-{{--                                <ul class="nav nav-tabs" id="custom-tabs-three-tab" role="tablist">--}}
-{{--                                    <li class="nav-item">--}}
-{{--                                        <a class="nav-link active" id="custom-tabs-sarlavha-uz-tab" data-toggle="pill" href="#sarlavha_uz" role="tab" aria-controls="custom-tabs-three-home" aria-selected="true">Sarlavha uz</a>--}}
-{{--                                    </li>--}}
-{{--                                    <li class="nav-item">--}}
-{{--                                        <a class="nav-link" id="custom-tabs-sarlavha-en-tab" data-toggle="pill" href="#sarlavha_en" role="tab" aria-controls="custom-tabs-three-profile" aria-selected="false">Sarlavha en</a>--}}
-{{--                                    </li>--}}
-{{--                                    <li class="nav-item">--}}
-{{--                                        <a class="nav-link" id="custom-tabs-sarlavha-ru-tab" data-toggle="pill" href="#sarlavha_ru" role="tab" aria-controls="custom-tabs-three-messages" aria-selected="false">Sarlavha ru</a>--}}
-{{--                                    </li>--}}
-{{--                                </ul>--}}
-{{--                            </div>--}}
-{{--                            <div class="card-body">--}}
-{{--                                <div class="tab-content" id="custom-tabs-three-tabContent">--}}
-{{--                                    <div class="tab-pane fade show active" id="sarlavha_uz" role="tabpanel" aria-labelledby="custom-tabs-sarlavha-uz-tab">--}}
-{{--                                        <input type="text" required class="form-control" name="title_uz"--}}
-{{--                                               placeholder="Sarlavha (uz)ni kiriting" value="{{old('title_uz')}}">--}}
-{{--                                        @error ('title_uz')--}}
-{{--                                        <p class="text-danger">* {{$message}}</p>--}}
-{{--                                        @enderror--}}
-{{--                                    </div>--}}
-{{--                                    <div class="tab-pane fade" id="sarlavha_en" role="tabpanel" aria-labelledby="custom-tabs-sarlavha-en-tab">--}}
-{{--                                        <input type="text" required class="form-control" name="title_en"--}}
-{{--                                               placeholder="Sarlavha (en)ni kiriting" value="{{old('title_en')}}">--}}
-{{--                                        @error ('title_en')--}}
-{{--                                        <p class="text-danger">* {{$message}}</p>--}}
-{{--                                        @enderror--}}
-{{--                                    </div>--}}
-{{--                                    <div class="tab-pane fade" id="sarlavha_ru" role="tabpanel" aria-labelledby="custom-tabs-sarlavha-ru-tab">--}}
-{{--                                        <input type="text" required class="form-control" name="title_ru"--}}
-{{--                                               placeholder="Sarlavha (ru)ni kiriting" value="{{old('title_ru')}}">--}}
-{{--                                        @error ('title_ru')--}}
-{{--                                        <p class="text-danger">* {{$message}}</p>--}}
-{{--                                        @enderror--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                            <!-- /.card -->--}}
-{{--                        </div>--}}
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="title_uz">Sarlavha Uz</label>
@@ -96,24 +55,24 @@
 
                                 <div class="form-group mt-3 mb-3">
                                     <label>Slayder rasmi</label>
-                                    <input type="file" class="form-control" name="image">
+                                    <input required type="file" class="form-control" name="image">
                                 </div>
                                 <div class="form-floating mt-3">
-                                    <textarea class="form-control" name="body_uz" placeholder="Leave a description Uz here" id="floatingTextarea2" style="height: 100px">{{old('body_uz')}}</textarea>
+                                    <textarea required class="form-control" name="body_uz" placeholder="Leave a description Uz here" id="floatingTextarea2" style="height: 100px">{{old('body_uz')}}</textarea>
                                     <label for="floatingTextarea2">Ma'lumot Uz</label>
                                     @error ('body_uz')
                                     <p class="text-danger">* {{$message}}</p>
                                     @enderror
                                 </div>
                                 <div class="form-floating mt-3">
-                                    <textarea class="form-control" name="body_en" placeholder="Leave a description En here" id="floatingTextarea2" style="height: 100px">{{old('body_en')}}</textarea>
+                                    <textarea required class="form-control" name="body_en" placeholder="Leave a description En here" id="floatingTextarea2" style="height: 100px">{{old('body_en')}}</textarea>
                                     <label for="floatingTextarea2">Ma'lumot En</label>
                                     @error ('body_en')
                                     <p class="text-danger">* {{$message}}</p>
                                     @enderror
                                 </div>
                                 <div class="form-floating mt-3">
-                                    <textarea class="form-control" name="body_ru" placeholder="Leave a description Ru here" id="floatingTextarea2" style="height: 100px">{{old('body_ru')}}</textarea>
+                                    <textarea required class="form-control" name="body_ru" placeholder="Leave a description Ru here" id="floatingTextarea2" style="height: 100px">{{old('body_ru')}}</textarea>
                                     <label for="floatingTextarea2">Ma'lumot Ru</label>
                                     @error ('body_ru')
                                     <p class="text-danger">* {{$message}}</p>
