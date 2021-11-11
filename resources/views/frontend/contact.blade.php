@@ -4,15 +4,34 @@
         <div class="container">
             <div class="row align-items-stretch contact-wrap">
                 <div class="col-md-6">
-                    <div class="form h-100">
+                    @if(session()->has('message'))
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <h4>Successfully send</h4>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    @endif
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
+                        <div class="form h-100">
                         <h3>{{__('words.contact')}}</h3>
                         <form
                             class="mb-5"
                             method="post"
                             id="contactForm"
                             name="contactForm"
-                            action="{{route('contact.send')}}"
+                            action="{{route('contactAdmin')}}"
                         >
+                            @csrf
                             <div class="row">
                                 <div class="col-md-6 form-group mb-5">
                                     <label for="" class="col-form-label">{{__('words.name')}} *</label>
@@ -54,7 +73,7 @@
                                     <input
                                         type="text"
                                         class="form-control"
-                                        name="company"
+                                        name="province"
                                         id="company"
                                         required
                                         placeholder="{{__('words.province')}}"
@@ -68,7 +87,7 @@
                                     >
                                     <textarea
                                         class="form-control"
-                                        name="message"
+                                        name="sms"
                                         id="message"
                                         cols="30"
                                         rows="4"

@@ -124,6 +124,18 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a href="{{route('admin.about.index')}}" class="nav-link @php
+                            if (Str::substr(Request::getRequestUri(), 0, 12) == '/admin/about') {
+                                echo 'active';
+                            }
+                        @endphp">
+                            <i class="nav-icon far fa-address-card"></i>
+                            <p>
+                                Biz haqimizda sahifasi
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a href="{{route('admin.categories.index')}}" class="nav-link @php
                             if (Str::substr(Request::getRequestUri(), 0, 17) == '/admin/categories') {
                                 echo 'active';
@@ -192,6 +204,18 @@
                             <i class="nav-icon bi bi-images"></i>
                             <p>
                                 Galereya
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('admin.images.index')}}" class="nav-link @php
+                            if (Str::substr(Request::getRequestUri(), 0, 14) == '/admin/contact') {
+                                echo 'active';
+                            }
+                        @endphp">
+                            <i class="nav-icon far fa-address-book"></i>
+                            <p>
+                                Xabarlar
                             </p>
                         </a>
                     </li>

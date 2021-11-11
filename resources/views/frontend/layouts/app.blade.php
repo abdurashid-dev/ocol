@@ -124,7 +124,7 @@
             <div class="row d-flex justify-content-center align-items-center">
                 <div class="col-xl-4">
                     <a href="{{route('home')}}" class="logo">
-                        <i class="far fa-circle"></i>
+                        <img src="{{asset('frontend/img/png/gerb.gif')}}" height="60px" style="margin: 10px"/>
                         <span>{{$text['name_'.session('lang')]}}</span
                         >
                     </a>
@@ -194,9 +194,9 @@
 
 <div class="footer">
     <div class="row paddingX items">
-        <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-3">
+        <div class="col-12 col-md-6 col-lg-4 col-xl-4 mb-3">
             <a href="{{route('home')}}" class="logo">
-                <img src="https://source.unsplash.com/random/100" alt=""/>
+                <img src="{{asset('frontend/img/png/gerb.gif')}}" height="60px" style="margin: 10px" alt="logo"/>
                 <span>{{$text['name_'.session('lang')]}}</span>
             </a>
             <div class="social">
@@ -205,27 +205,16 @@
                 @endforeach
             </div>
         </div>
-        <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-3">
-            <span class="sub_title">Menu Title</span>
+        <div class="col-12 col-md-6 col-lg-4 col-xl-4 mb-3">
+            <span class="sub_title">Menu</span>
             <ul>
-                <li><a href="#">Menu Item 01</a></li>
-                <li><a href="#">Menu Item 01</a></li>
-                <li><a href="#">Menu Item 01</a></li>
-                <li><a href="#">Menu Item 01</a></li>
-                <li><a href="#">Menu Item 01</a></li>
+                <li><a href="{{route('blog')}}">{{__('words.news')}}</a></li>
+                <li><a href="{{route('about')}}">{{__('words.about')}}</a></li>
+                <li><a href="{{route('image')}}">{{__('words.gallery')}}</a></li>
+                <li><a href="{{route('contact')}}">{{__('words.contact')}}</a></li>
             </ul>
         </div>
-        <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-3">
-            <span class="sub_title">Menu Title</span>
-            <ul>
-                <li><a href="#">Menu Item 01</a></li>
-                <li><a href="#">Menu Item 01</a></li>
-                <li><a href="#">Menu Item 01</a></li>
-                <li><a href="#">Menu Item 01</a></li>
-                <li><a href="#">Menu Item 01</a></li>
-            </ul>
-        </div>
-        <div class="col-12 col-md-6 col-lg-12 col-xl-3">
+        <div class="col-12 col-md-6 col-lg-12 col-xl-4">
             <span class="sub_title">{{__('words.contact')}}</span>
             <div class="contacts">
                 <div class="contacts__item">
@@ -268,104 +257,6 @@
 <script src="{{asset('frontend/js/jquery.counterup.min.js')}}"></script>
 <script src="{{asset('frontend/js/stellarnav.min.js')}}"></script>
 <script src="{{asset('frontend/js/main.js')}}"></script>
+@yield('script')
 </body>
 </html>
-{{--<div class="wow services paddingX py-5">--}}
-{{--    <span class="title wow">{{__('words.useful links')}}</span>--}}
-{{--    <div class="container-fluid">--}}
-{{--        <div class="swiper-container mySwiper">--}}
-{{--            <div class="swiper-wrapper">--}}
-{{--                @foreach($links as $link)--}}
-{{--                <div class="swiper-slide">--}}
-{{--                    <i class="{{$link->icon}}"></i>--}}
-{{--                    <a href="#" class="service_title"--}}
-{{--                    >{{$link['title_'.session('lang')]}}</a--}}
-{{--                    >--}}
-{{--                </div>--}}
-{{--                @endforeach--}}
-{{--            </div>--}}
-{{--            <div class="swiper-pagination"></div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--</div>--}}
-
-{{--<div class="footer">--}}
-{{--    <div class="row paddingX items">--}}
-{{--        <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-3">--}}
-{{--            <a href="{{route('home')}}" class="logo">--}}
-{{--                <img src="https://source.unsplash.com/random/100" alt=""/>--}}
-{{--                <span>{{$text['name_'.session('lang')]}}</span>--}}
-{{--            </a>--}}
-{{--            <div class="social">--}}
-{{--                @foreach($socials as $social)--}}
-{{--                    <a href="{{$social->link}}" class="{{$social->icon}}"></a>--}}
-{{--                @endforeach--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--        <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-3">--}}
-{{--            <span class="sub_title">Menu Title</span>--}}
-{{--            <ul>--}}
-{{--                <li><a href="#">Menu Item 01</a></li>--}}
-{{--                <li><a href="#">Menu Item 01</a></li>--}}
-{{--                <li><a href="#">Menu Item 01</a></li>--}}
-{{--                <li><a href="#">Menu Item 01</a></li>--}}
-{{--                <li><a href="#">Menu Item 01</a></li>--}}
-{{--            </ul>--}}
-{{--        </div>--}}
-{{--        <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-3">--}}
-{{--            <span class="sub_title">Menu Title</span>--}}
-{{--            <ul>--}}
-{{--                <li><a href="#">Menu Item 01</a></li>--}}
-{{--                <li><a href="#">Menu Item 01</a></li>--}}
-{{--                <li><a href="#">Menu Item 01</a></li>--}}
-{{--                <li><a href="#">Menu Item 01</a></li>--}}
-{{--                <li><a href="#">Menu Item 01</a></li>--}}
-{{--            </ul>--}}
-{{--        </div>--}}
-{{--        <div class="col-12 col-md-6 col-lg-12 col-xl-3">--}}
-{{--            <span class="sub_title">{{__('words.contact')}}</span>--}}
-{{--            <div class="contacts">--}}
-{{--                <div class="contacts__item">--}}
-{{--                    <i class="fas fa-map-marker-alt"></i>--}}
-{{--                    <span class="wrap">--}}
-{{--                <span>{{$text['address_'.session('lang')]}}</span>--}}
-{{--              </span>--}}
-{{--                </div>--}}
-{{--                <a href="tel:{{$text->number}}" class="contacts__item">--}}
-{{--                    <i class="fas fa-phone-alt"></i>--}}
-{{--                    <span>{{$text->number}}</span>--}}
-{{--                </a>--}}
-{{--                <a href="mailto:{{$text->email}}" class="contacts__item">--}}
-{{--                    <i class="fas fa-mail-bulk"></i>--}}
-{{--                    <span>{{$text->email}}</span>--}}
-{{--                </a>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--    <div class="map">--}}
-{{--        <iframe--}}
-{{--            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48628.95034719378!2d71.75544211991246!3d40.37983490223694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38bb83431937abc5%3A0xcfa4d876b34e7bbc!2z0KTQtdGA0LPQsNC90LAsINCj0LfQsdC10LrQuNGB0YLQsNC9!5e0!3m2!1sru!2s!4v1635587830140!5m2!1sru!2s"--}}
-{{--            width="600"--}}
-{{--            height="450"--}}
-{{--            style="border: 0"--}}
-{{--            allowfullscreen=""--}}
-{{--            loading="lazy"--}}
-{{--        ></iframe>--}}
-{{--    </div>--}}
-{{--</div>--}}
-{{--<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/7.2.0/swiper-bundle.min.js"></script>--}}
-{{--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>--}}
-{{--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js"></script>--}}
-{{--<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/js/bootstrap.min.js"></script>--}}
-{{--<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>--}}
-{{--<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>--}}
-{{--<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.3/dist/jquery.fancybox.min.js"></script>--}}
-{{--<script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/4.0.9/scrollreveal.min.js"></script>--}}
-{{--<script src="{{asset('frontend/js/waypoints.min.js')}}"></script>--}}
-{{--<script src="{{asset('frontend/js/jquery.counterup.min.js')}}"></script>--}}
-{{--<script src="{{asset('frontend/js/stellarnav.min.js')}}"></script>--}}
-{{--<script src="{{asset('frontend/js/main.js')}}"></script>--}}
-{{--@yield('script')--}}
-{{--</body>--}}
-{{--</html>--}}
-

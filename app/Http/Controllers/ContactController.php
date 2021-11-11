@@ -14,7 +14,8 @@ class ContactController extends Controller
      */
     public function index()
     {
-        //
+        $contacts = Contact::orderByDesc('created_at')->paginate(20);
+        return view('admin.contact.index', compact('contacts'));
     }
 
     /**
@@ -35,7 +36,7 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
@@ -46,7 +47,7 @@ class ContactController extends Controller
      */
     public function show(Contact $contact)
     {
-        //
+        return view('admin.contact.show', compact('contact'));
     }
 
     /**
@@ -80,6 +81,8 @@ class ContactController extends Controller
      */
     public function destroy(Contact $contact)
     {
-        //
+        $contact->delete();
+        session()->flash('message', 'Muvaffaqiyatli o\'chirildi!');
+        return redirect()->route('admin.contact.index');
     }
 }

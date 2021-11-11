@@ -12,6 +12,8 @@ use App\Http\Controllers\ImageController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\SocialSettingsController;
 use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\AboutSettingController;
+use App\Http\Controllers\ContactController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,11 +34,10 @@ Route::get('/gerb',[FrontendController::class, 'gerb'])->name('gerb');
 Route::get('/madhiya',[FrontendController::class, 'madhiya'])->name('madhiya');
 Route::get('/image-gallery',[FrontendController::class, 'image'])->name('image');
 Route::get('/contact',[FrontendController::class, 'contact'])->name('contact');
-Route::get('/contact-send',[FrontendController::class, 'contactSend'])->name('contact.send');
-
+// Contact with admin
+Route::post('/contact-admin', [FrontendController::class, 'contactAdmin'])->name('contactAdmin');
 //Language
 Route::get('/lang/{lang}', [PagesController::class, 'lang'])->name('lang');
-
 // Admin
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('index');
@@ -49,6 +50,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
         'images'=> ImageController::class,
         'settings'=> SettingController::class,
         'social'=>SocialSettingsController::class,
+        'about'=>AboutSettingController::class,
+        'contact'=>ContactController::class,
     ]);
     // Active and inactive
     Route::post('/activation-blog/{id}', [PagesController::class, 'activation'])->name('activation');

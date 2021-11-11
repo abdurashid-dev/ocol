@@ -343,5 +343,5 @@
     </div>
 @endsection
 @section('script')
-<script src="{{asset('frontend/js/headerSlider.js')}}"></script>
+    <script src="{{asset('frontend/js/headerSlider.js')}}"></script>
 @endsection

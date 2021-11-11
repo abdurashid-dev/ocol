@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AboutSetting;
 use App\Models\Blog;
+use App\Models\Contact;
 use App\Models\Image;
 use App\Models\Link;
 use App\Models\Result;
 use App\Models\Setting;
 use App\Models\Slider;
 use App\Models\SocialSettings;
+use Illuminate\Http\Request;
 
 class FrontendController extends Controller
 {
@@ -20,7 +23,7 @@ class FrontendController extends Controller
         $news = Blog::where('is_active',1)->get();
         $results = Result::where('is_active',1)->get();
         $links = Link::where('is_active',1)->get();
-        $images = Image::where('is_active',1)->get();
+        $images = Image::where('is_active',1)->inRandomOrder()->limit(6)->get();
         return view('frontend.index',[
             'text'=>$text,
             'socials'=>$social,
@@ -89,6 +92,7 @@ class FrontendController extends Controller
 
     public function about()
     {
+        $about = AboutSetting::first();
         $text = Setting::first();
         $social = SocialSettings::where('is_active',1)->get();
         $links = Link::where('is_active',1)->get();
@@ -96,6 +100,7 @@ class FrontendController extends Controller
             'text'=>$text,
             'socials'=>$social,
             'links'=>$links,
+            'about'=>$about,
         ]);
     }
 
@@ -133,5 +138,18 @@ class FrontendController extends Controller
             'socials'=>$social,
             'links'=>$links,
         ]);
+    }
+    public function contactAdmin(Request $request){
+        $data = $request->validate([
+            'name'=>'required|max:255',
+            'email'=>'required|max:255',
+            'phone'=>'required|max:255',
+            'province'=>'required|max:255',
+            'sms'=>'required',
+        ]);
+//    dd($data);
+        Contact::create($data);
+        return back()->with('message', 'Success');
+
     }
 }
