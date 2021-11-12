@@ -194,9 +194,9 @@
 
 <div class="footer">
     <div class="row paddingX items">
-        <div class="col-12 col-md-6 col-lg-4 col-xl-4 mb-3">
+        <div class="col-12 col-md-6 col-lg-4 col-xl-4 mb-3">s
             <a href="{{route('home')}}" class="logo">
-                <img src="{{asset('frontend/img/png/gerb.gif')}}" height="60px" style="margin: 10px" alt="logo"/>
+                <img src="{{asset('frontend/img/png/gerb.gif')}}" height="40px" style="margin: 10px" alt="logo"/>
                 <span>{{$text['name_'.session('lang')]}}</span>
             </a>
             <div class="social">
