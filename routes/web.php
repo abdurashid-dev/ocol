@@ -15,6 +15,7 @@ use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\AboutSettingController;
 use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\PageSettingController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -53,6 +54,7 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
         'social'=>SocialSettingsController::class,
         'about'=>AboutSettingController::class,
         'contact'=>ContactController::class,
+        'page'=>PageSettingController::class,
     ]);
     // Active and inactive
     Route::post('/activation-blog/{id}', [PagesController::class, 'activation'])->name('activation');

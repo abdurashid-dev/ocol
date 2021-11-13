@@ -212,7 +212,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('admin.images.index')}}" class="nav-link @php
+                        <a href="{{route('admin.contact.index')}}" class="nav-link @php
                             if (Str::substr(Request::getRequestUri(), 0, 14) == '/admin/contact') {
                                 echo 'active';
                             }
@@ -220,6 +220,18 @@
                             <i class="nav-icon far fa-address-book"></i>
                             <p>
                                 Xabarlar
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('admin.page.index')}}" class="nav-link @php
+                            if (Str::substr(Request::getRequestUri(), 0, 14) == '/admin/contact') {
+                                echo 'active';
+                            }
+                        @endphp">
+                            <i class="nav-icon fas fa-pager"></i>
+                            <p>
+                                Sahifalar
                             </p>
                         </a>
                     </li>
