@@ -240,20 +240,13 @@
 {{--@endsection--}}
 
 
-
-
-
-
-
-
-
 @extends('frontend.layouts.app')
 @section('content')
     <div class="wrapper header_slider loading">
         <main>
-                <div class="slideshow">
-                    <div class="slides">
-                        @foreach($sliders as $key => $slider)
+            <div class="slideshow">
+                <div class="slides">
+                    @foreach($sliders as $key => $slider)
                         <div class="slide {{$key == 0 ? "slide--current" : ''}}">
                             <div
                                 class="slide__img"
@@ -263,17 +256,17 @@
                             <p class="slide__desc">{{$slider['body_'.session('lang')]}}</p>
                             <a class="slide__link" href="{{$slider->link}}">{{__('words.read more')}}</a>
                         </div>
-                        @endforeach
-                    </div>
-                    <nav class="slidenav">
-                        <button class="slidenav__item slidenav__item--prev">
-                            <i class="fas fa-angle-left"></i>
-                        </button>
-                        <button class="slidenav__item slidenav__item--next">
-                            <i class="fas fa-angle-right"></i>
-                        </button>
-                    </nav>
+                    @endforeach
                 </div>
+                <nav class="slidenav">
+                    <button class="slidenav__item slidenav__item--prev">
+                        <i class="fas fa-angle-left"></i>
+                    </button>
+                    <button class="slidenav__item slidenav__item--next">
+                        <i class="fas fa-angle-right"></i>
+                    </button>
+                </nav>
+            </div>
         </main>
     </div>
     <div class="news paddingX py-5">
@@ -293,9 +286,6 @@
                             <span class="news_title"
                             >{{$new['title_'.session('lang')]}}</span
                             >
-                            <span class="news_description"
-                            >{{$new['content_'.session('lang')]}}</span
-                            >
                             <a href="{{route('singleBlog', $new->id)}}" class="nd_btn"
                             ><span>{{__('words.read more')}}</span></a
                             >
@@ -312,15 +302,15 @@
         <span class="title wow">{{__('words.gallery')}}</span>
         <div class="wrapper" id="gallery-container">
             @foreach($images as $image)
-            <figure class="photogallery__item">
-                <a
-                    data-fancybox="images"
-                    href="{{$image->image}}"
-                >
-                    <img class="img-fluid" src="{{$image->image}}"/>
-                    <i class="fa fa-camera"></i>
-                </a>
-            </figure>
+                <figure class="photogallery__item">
+                    <a
+                        data-fancybox="images"
+                        href="{{$image->image}}"
+                    >
+                        <img class="img-fluid" src="{{$image->image}}"/>
+                        <i class="fa fa-camera"></i>
+                    </a>
+                </figure>
             @endforeach
         </div>
         <a href="{{route('image')}}" class="st_btn">
@@ -329,14 +319,12 @@
     </div>
     <div class="counter_section paddingX py-5">
         <span class="title wow">{{__('words.indicators')}}</span>
-        <div class="counter_wrapper row">
+        <div class="counter_wrapper">
             @foreach($results as $result)
-                <div class="col-xl-3 col-lg-6 col-md-12 m-0">
-                    <div class="wow item_counter">
-                        <i class="{{$result->icon}}"></i>
-                        <span class="counter_title">{{$result['title_'.session('lang')]}}</span>
-                        <span class="counter">{{$result->number}}</span>
-                    </div>
+                <div class="wow item_counter">
+                    <i class="{{$result->icon}}"></i>
+                    <span class="counter_title">{{$result['title_'.session('lang')]}}</span>
+                    <span class="counter">{{$result->number}}</span>
                 </div>
             @endforeach
         </div>

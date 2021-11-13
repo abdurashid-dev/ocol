@@ -47,7 +47,7 @@
 </div>
 <div class="accessibility_menu">
     <div class="container">
-        <div class="accessibility_wrapper">
+            <div class="accessibility_wrapper">
             <div class="font_size accessibility_item">
                 <span>{{__('words.font size')}}</span>
                 <div class="buttons">
@@ -181,7 +181,7 @@
                 @foreach($links as $link)
                 <div class="swiper-slide">
                     <i class="{{$link->icon}}"></i>
-                    <a href="#" class="service_title"
+                    <a href="{{$link->link}}" class="service_title"
                     >{{$link['title_'.session('lang')]}}</a
                     >
                 </div>

@@ -13,8 +13,8 @@
                         </div>
                         <div class="col-12">
                             <span class="date text-muted mb-1">{{$new->created_at->diffForhumans()}}</span>
-                            <h5 class="news_title">{{$new->title_uz}}</h5>
-                            <p>{!! $new->content_uz !!}</p>
+                            <h5 class="news_title">{{$new['title_'.session('lang')]}}</h5>
+                            <p>{!! $new['content_'.session('lang')] !!}</p>
                         </div>
                     </div>
                 </div>
@@ -22,16 +22,16 @@
                     <h5 class="text-dark mb-3">{{__('words.another news')}}</h5>
                     @foreach($news as $blog)
                         <div class="row mb-3">
-                        <div class="col-4">
-                            <img
-                                class="news_thumbs"
-                                src="{{asset($blog->image)}}"
-                            />
+                            <div class="col-4">
+                                <img
+                                    class="news_thumbs"
+                                    src="{{asset($blog->image)}}"
+                                />
+                            </div>
+                            <div class="col-8">
+                                <a class="text-dark" href="{{route('singleBlog', $blog->id)}}">{{$blog->title_uz}}</a>
+                            </div>
                         </div>
-                        <div class="col-8">
-                            <a class="text-dark" href="{{route('singleBlog', $blog->id)}}">{{$blog->title_uz}}</a>
-                        </div>
-                    </div>
                     @endforeach
                 </div>
             </div>

@@ -6,26 +6,26 @@
             <div class="wrapper row">
                 @foreach($news as $new)
                     <div class="col-md-6 col-12 col-xl-4 mb-4">
-                    <div class="news_item">
-                        <div class="news_item swiper-slide">
-                            <div class="date_news">
-                                <i class="far fa-calendar-alt"></i>
-                                <span class="date">{{$new->created_at->diffForHumans()}}</span>
+                        <div class="news_item">
+                            <div class="news_item swiper-slide">
+                                <div class="date_news">
+                                    <i class="far fa-calendar-alt"></i>
+                                    <span class="date">{{$new->created_at->diffForHumans()}}</span>
+                                </div>
+                                <div class="news_img">
+                                    <img src="{{$new->image}}"/>
+                                </div>
+                                <span class="news_title">{{$new['title_'.session('lang')]}}</span
+                                >
+                                <span class="news_description"
+                                ></span
+                                >
+                                <a href="{{route('singleBlog', $new->id)}}" class="nd_btn"
+                                ><span>{{__('words.read more')}}</span></a
+                                >
                             </div>
-                            <div class="news_img">
-                                <img src="{{$new->image}}" />
-                            </div>
-                            <span class="news_title">{{$new['title_'.session('lang')]}}</span
-                            >
-                            <span class="news_description"
-                            >{{$new['content_'.session('lang')]}}</span
-                            >
-                            <a href="{{route('singleBlog', $new->id)}}" class="nd_btn"
-                            ><span>{{__('words.read more')}}</span></a
-                            >
                         </div>
                     </div>
-                </div>
                 @endforeach
             </div>
             {{$news->links('frontend.layouts.pagination')}}
