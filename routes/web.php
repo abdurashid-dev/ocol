@@ -14,6 +14,7 @@ use App\Http\Controllers\SocialSettingsController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\AboutSettingController;
 use App\Http\Controllers\ContactController;
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,7 +40,7 @@ Route::post('/contact-admin', [FrontendController::class, 'contactAdmin'])->name
 //Language
 Route::get('/lang/{lang}', [PagesController::class, 'lang'])->name('lang');
 // Admin
-Route::prefix('admin')->name('admin.')->group(function () {
+Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('index');
     Route::resources([
         'categories' => CategoryController::class,
@@ -62,3 +63,9 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::post('/activation-social/{id}', [PagesController::class, 'socialActivation'])->name('socialActive');
 });
 
+
+Auth::routes([
+    'register'=>false
+]);
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
