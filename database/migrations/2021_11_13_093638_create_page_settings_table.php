@@ -18,11 +18,11 @@ class CreatePageSettingsTable extends Migration
             $table->string('title_uz');
             $table->string('title_en');
             $table->string('title_ru');
-            $table->longText('body_uz');
-            $table->longText('body_en');
-            $table->longText('body_ru');
-            $table->boolean('is_active')->default(false);
             $table->string('slug');
+            $table->longText('content_uz');
+            $table->longText('content_en');
+            $table->longText('content_ru');
+            $table->boolean('is_active')->default(false);
             $table->timestamps();
         });
     }
