@@ -16,10 +16,14 @@
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.3/dist/jquery.fancybox.min.css"
     />
+    <link rel="icon" href="{{asset('frontend/img/png/gerb.gif')}}" type="image/x-icon"/>
+    <link rel="shortcut icon" href="{{asset('frontend/img/png/gerb.gif')}}" type="image/x-icon"/>
     <link rel="stylesheet" href="{{asset('frontend/css/stellarnav.min.css')}}" />
     <link rel="stylesheet" href="{{asset('frontend/css/swiper-bundle.min.css')}}" />
     <link rel="stylesheet" href="{{asset('frontend/css/main.css')}}" />
-    <title>O'zbekiston Respublikasi Davlat</title>
+    {!! SEO::generate() !!}
+    {!! OpenGraph::generate() !!}
+    {!! JsonLd::generate() !!}
 </head>
 
 <body>

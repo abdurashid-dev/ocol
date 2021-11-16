@@ -11,12 +11,29 @@ use App\Models\Result;
 use App\Models\Setting;
 use App\Models\Slider;
 use App\Models\SocialSettings;
+use Artesaos\SEOTools\Facades\JsonLd;
+use Artesaos\SEOTools\Facades\OpenGraph;
+use Artesaos\SEOTools\Facades\SEOMeta;
+use Artesaos\SEOTools\Facades\SEOTools;
+use Artesaos\SEOTools\Facades\TwitterCard;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
 {
     public function index()
     {
+        SEOMeta::setTitle('Oltiariq pedagogika kolleji');
+        SEOMeta::setDescription('Oltiariq pedagogika kollejining rasmiy sayti');
+        SEOMeta::setCanonical('https://oltiariqped.uz');
+
+        OpenGraph::setDescription('Oltiariq pedagogika kollejining rasmiy sayti');
+        OpenGraph::setTitle('Oltiariq pedagogika kolleji');
+        OpenGraph::setUrl('https://oltiariqped.uz');
+        OpenGraph::addProperty('type', 'articles');
+
+        JsonLd::setTitle('Oltiariq pedagogika kolleji');
+        JsonLd::setDescription('Oltiariq pedagogika kollejining rasmiy sayti');
+
         $text = Setting::first();
         $social = SocialSettings::where('is_active',1)->get();
         $sliders = Slider::where('is_active',1)->get();
@@ -37,6 +54,17 @@ class FrontendController extends Controller
 
     public function singleBlog(Blog $id)
     {
+        SEOMeta::setTitle('Yangiliklar');
+        SEOMeta::setDescription('Oltiariq pedagogika kollejining rasmiy sayti');
+        SEOMeta::setCanonical('https://oltiariqped.uz');
+
+        OpenGraph::setDescription('Oltiariq pedagogika kollejining rasmiy sayti');
+        OpenGraph::setTitle('Yangiliklar');
+        OpenGraph::setUrl('https://oltiariqped.uz');
+        OpenGraph::addProperty('type', 'articles');
+
+        JsonLd::setTitle('Yangiliklar');
+        JsonLd::setDescription('Oltiariq pedagogika kollejining rasmiy sayti');
         $text = Setting::first();
         $social = SocialSettings::where('is_active',1)->get();
         $news = Blog::where('is_active',1)->where('id','!=',$id->id)->limit(4)->get();
@@ -52,6 +80,17 @@ class FrontendController extends Controller
 
     public function blog()
     {
+        SEOMeta::setTitle('Yangiliklar');
+        SEOMeta::setDescription('Oltiariq pedagogika kollejining rasmiy sayti');
+        SEOMeta::setCanonical('https://oltiariqped.uz');
+
+        OpenGraph::setDescription('Oltiariq pedagogika kollejining rasmiy sayti');
+        OpenGraph::setTitle('Yangiliklar');
+        OpenGraph::setUrl('https://oltiariqped.uz');
+        OpenGraph::addProperty('type', 'articles');
+
+        JsonLd::setTitle('Yangiliklar');
+        JsonLd::setDescription('Oltiariq pedagogika kollejining rasmiy sayti');
         $text = Setting::first();
         $social = SocialSettings::where('is_active',1)->get();
         $links = Link::where('is_active',1)->get();
@@ -66,6 +105,17 @@ class FrontendController extends Controller
 
     public function image()
     {
+        SEOMeta::setTitle('Rasmlar galereyasi');
+        SEOMeta::setDescription('Oltiariq pedagogika kollejining rasmiy sayti');
+        SEOMeta::setCanonical('https://oltiariqped.uz');
+
+        OpenGraph::setDescription('Oltiariq pedagogika kollejining rasmiy sayti');
+        OpenGraph::setTitle('Rasmlar galereyasi');
+        OpenGraph::setUrl('https://oltiariqped.uz');
+        OpenGraph::addProperty('type', 'articles');
+
+        JsonLd::setTitle('Rasmlar galereyasi');
+        JsonLd::setDescription('Oltiariq pedagogika kollejining rasmiy sayti');
         $text = Setting::first();
         $social = SocialSettings::where('is_active',1)->get();
         $links = Link::where('is_active',1)->get();
@@ -80,6 +130,17 @@ class FrontendController extends Controller
 
     public function contact()
     {
+        SEOMeta::setTitle('Biz bilan aloqa');
+        SEOMeta::setDescription('Oltiariq pedagogika kollejining rasmiy sayti');
+        SEOMeta::setCanonical('https://oltiariqped.uz');
+
+        OpenGraph::setDescription('Oltiariq pedagogika kollejining rasmiy sayti');
+        OpenGraph::setTitle('Biz bilan aloqa');
+        OpenGraph::setUrl('https://oltiariqped.uz');
+        OpenGraph::addProperty('type', 'articles');
+
+        JsonLd::setTitle('Biz bilan aloqa');
+        JsonLd::setDescription('Oltiariq pedagogika kollejining rasmiy sayti');
         $text = Setting::first();
         $social = SocialSettings::where('is_active',1)->get();
         $links = Link::where('is_active',1)->get();
@@ -92,6 +153,18 @@ class FrontendController extends Controller
 
     public function about()
     {
+        SEOMeta::setTitle('Biz haqimizda');
+        SEOMeta::setDescription('Oltiariq pedagogika kollejining rasmiy sayti');
+        SEOMeta::setCanonical('https://oltiariqped.uz');
+
+        OpenGraph::setDescription('Oltiariq pedagogika kollejining rasmiy sayti');
+        OpenGraph::setTitle('Biz haqimizda');
+        OpenGraph::setUrl('https://oltiariqped.uz');
+        OpenGraph::addProperty('type', 'articles');
+
+        JsonLd::setTitle('Biz haqimizda');
+        JsonLd::setDescription('Oltiariq pedagogika kollejining rasmiy sayti');
+
         $about = AboutSetting::first();
         $text = Setting::first();
         $social = SocialSettings::where('is_active',1)->get();
@@ -106,6 +179,17 @@ class FrontendController extends Controller
 
     public function flag()
     {
+        SEOMeta::setTitle('Bayroq');
+        SEOMeta::setDescription('Oltiariq pedagogika kollejining rasmiy sayti');
+        SEOMeta::setCanonical('https://oltiariqped.uz');
+
+        OpenGraph::setDescription('Oltiariq pedagogika kollejining rasmiy sayti');
+        OpenGraph::setTitle('Bayroq');
+        OpenGraph::setUrl('https://oltiariqped.uz');
+        OpenGraph::addProperty('type', 'articles');
+
+        JsonLd::setTitle('Bayroq');
+        JsonLd::setDescription('Oltiariq pedagogika kollejining rasmiy sayti');
         $text = Setting::first();
         $social = SocialSettings::where('is_active',1)->get();
         $links = Link::where('is_active',1)->get();
@@ -118,6 +202,17 @@ class FrontendController extends Controller
 
     public function gerb()
     {
+        SEOMeta::setTitle('Gerb');
+        SEOMeta::setDescription('Oltiariq pedagogika kollejining rasmiy sayti');
+        SEOMeta::setCanonical('https://oltiariqped.uz');
+
+        OpenGraph::setDescription('Oltiariq pedagogika kollejining rasmiy sayti');
+        OpenGraph::setTitle('Gerb');
+        OpenGraph::setUrl('https://oltiariqped.uz');
+        OpenGraph::addProperty('type', 'articles');
+
+        JsonLd::setTitle('Gerb');
+        JsonLd::setDescription('Oltiariq pedagogika kollejining rasmiy sayti');
         $text = Setting::first();
         $social = SocialSettings::where('is_active',1)->get();
         $links = Link::where('is_active',1)->get();
@@ -130,6 +225,17 @@ class FrontendController extends Controller
 
     public function madhiya()
     {
+        SEOMeta::setTitle('Madhiya');
+        SEOMeta::setDescription('Oltiariq pedagogika kollejining rasmiy sayti');
+        SEOMeta::setCanonical('https://oltiariqped.uz');
+
+        OpenGraph::setDescription('Oltiariq pedagogika kollejining rasmiy sayti');
+        OpenGraph::setTitle('Madhiya');
+        OpenGraph::setUrl('https://oltiariqped.uz');
+        OpenGraph::addProperty('type', 'articles');
+
+        JsonLd::setTitle('Madhiya');
+        JsonLd::setDescription('Oltiariq pedagogika kollejining rasmiy sayti');
         $text = Setting::first();
         $social = SocialSettings::where('is_active',1)->get();
         $links = Link::where('is_active',1)->get();
