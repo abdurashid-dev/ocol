@@ -1,5 +1,6 @@
 <?php
     return [
+      'home' => 'Bosh sahifa',
       'news' => 'Yangiliklar',
       'about' => 'Biz Haqimizda',
       'media' => 'Media',

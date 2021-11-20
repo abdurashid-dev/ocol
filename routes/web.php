@@ -43,6 +43,9 @@ Route::get('/lang/{lang}', [PagesController::class, 'lang'])->name('lang');
 // Admin
 Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('index');
+    Route::get('/profile', [AdminController::class, 'profile'])->name('profile');
+    Route::post('/changeData', [AdminController::class, 'data'])->name('data');
+    Route::post('/changePassword', [AdminController::class, 'password'])->name('password');
     Route::resources([
         'categories' => CategoryController::class,
         'blogs' => BlogController::class,
@@ -71,3 +74,4 @@ Auth::routes([
 ]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
+

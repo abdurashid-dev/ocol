@@ -20,6 +20,7 @@ class CreateContactsTable extends Migration
             $table->string('phone');
             $table->string('province');
             $table->longText('sms');
+            $table->boolean('is_reviewed')->default(false);
             $table->timestamps();
         });
     }

@@ -168,6 +168,7 @@
 </header>
 <div class="stellarnav paddingX headline">
         <ul>
+            <li><a href="{{route('home')}}">{{__('words.home')}}</a></li>
             <li><a href="{{route('blog')}}">{{__('words.news')}}</a></li>
             <li><a href="{{route('about')}}">{{__('words.about')}}</a></li>
             <li><a href="{{route('image')}}">{{__('words.gallery')}}</a></li>

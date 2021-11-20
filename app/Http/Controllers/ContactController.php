@@ -47,6 +47,7 @@ class ContactController extends Controller
      */
     public function show(Contact $contact)
     {
+        $contact->update(['is_reviewed'=>true]);
         return view('admin.contact.show', compact('contact'));
     }
 

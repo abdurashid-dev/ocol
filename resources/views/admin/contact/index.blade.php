@@ -25,7 +25,11 @@
                             <th>Harakatlar</th>
                         </tr>
                         @foreach($contacts as $contact)
-                            <tr>
+                            <tr
+                            @if(!$contact->is_reviewed)
+                                class="font-weight-bold"
+                            @endif
+                            >
                                 <td>{{$loop->index+1}}</td>
                                 <td>{{$contact->name}}</td>
                                 <td>{{$contact->email}}</td>

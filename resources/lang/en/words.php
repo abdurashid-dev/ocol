@@ -1,5 +1,6 @@
 <?php
 return [
+    'home' => 'Home',
     'news' => 'News',
     'about' => 'About us',
     'media' => 'Media',
